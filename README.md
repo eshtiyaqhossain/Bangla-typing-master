@@ -2,7 +2,7 @@
 
 ![Okkhoro app icon](assets/icon.svg)
 
-**Author:** Eshtiyaq Hossain
+**Author:** Md Al Eshtiyaq Hossain
 
 **Project type:** Desktop typing-practice application
 
