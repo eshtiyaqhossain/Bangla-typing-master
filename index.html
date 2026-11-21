@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f6f7f2" />
+    <meta name="description" content="বাংলা ও ইংরেজি টাইপিং অনুশীলন করুন, গতি ও নির্ভুলতা বাড়ান।" />
+    <title>অক্ষর | Typing Practice</title>
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="অক্ষর হোম">
+        <span class="brand-mark" aria-hidden="true">অ</span>
+        <span>অক্ষর<span class="brand-dot">.</span></span>
+      </a>
+      <span class="topbar-note">একটু একটু করে, আরও দ্রুত</span>
+      <button class="icon-button" id="newBtn" type="button" title="নতুন অনুশীলন" aria-label="নতুন অনুশীলন">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4.9 9a7.5 7.5 0 0 1 12.4-2L20 12M4 17v-5h5m10.1 3a7.5 7.5 0 0 1-12.4 2L4 12" /></svg>
+      </button>
+    </header>
+
+    <main class="practice-shell">
+      <section class="intro" aria-labelledby="pageTitle">
+        <p class="eyebrow"><span class="live-dot"></span> DAILY PRACTICE</p>
+        <h1 id="pageTitle">গতি আসে <span>অনুশীলনে।</span></h1>
+        <p class="intro-copy">মন দিয়ে টাইপ করুন। প্রতিটি অনুশীলন আপনাকে আরও দক্ষ করে তুলবে।</p>
+      </section>
+
+      <section class="practice" aria-label="টাইপিং অনুশীলন">
+        <div class="practice-toolbar">
+          <div class="segmented" role="group" aria-label="টাইপিংয়ের ভাষা">
+            <button class="segment is-selected" data-language="bn" type="button" aria-pressed="true">বাংলা</button>
+            <button class="segment" data-language="en" type="button" aria-pressed="false">English</button>
+          </div>
+          <div class="practice-mode" role="group" aria-label="অনুশীলনের ধরন">
+            <button class="mode-button is-selected" data-mode="sentence" type="button" aria-pressed="true">বাক্য</button>
+            <button class="mode-button" data-mode="letter" id="letterModeBtn" type="button" aria-pressed="false">একসাথে ৫টি</button>
+          </div>
+          <div class="duration-control" role="group" aria-label="অনুশীলনের সময়">
+            <button class="duration is-selected" data-duration="30" type="button" aria-pressed="true">৩০ সেকেন্ড</button>
+            <button class="duration" data-duration="60" type="button" aria-pressed="false">১ মিনিট</button>
+            <button class="duration" data-duration="120" type="button" aria-pressed="false">২ মিনিট</button>
+          </div>
+        </div>
+
+        <div class="passage-wrap" id="passageBox">
+          <div class="passage-meta"><span>অনুশীলনের লেখা</span><span id="progressLabel">শুরু করতে টাইপ করুন</span></div>
+          <p id="passage" lang="bn" aria-live="off"></p>
+        </div>
+
+        <label class="input-label" for="typingInput">আপনার টাইপিং</label>
+        <textarea id="typingInput" placeholder="এখানে টাইপ করা শুরু করুন..." autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="message"></textarea>
+
+        <div class="session-footer">
+          <span id="message" role="status">টাইপ করা শুরু করলেই সময় গণনা শুরু হবে</span>
+          <button class="text-button" id="skipBtn" type="button">লেখা বদলান <span aria-hidden="true">↗</span></button>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="অনুশীলনের পরিসংখ্যান">
+        <article class="stat stat-primary"><span class="stat-label">টাইপিং গতি</span><div><span class="stat-value" id="wpm">0</span><span class="stat-unit" id="speedUnit">WPM</span></div><span class="stat-foot" id="speedFoot">প্রতি মিনিটে শব্দ</span></article>
+        <article class="stat"><span class="stat-label">নির্ভুলতা</span><div><span class="stat-value" id="accuracy">100</span><span class="stat-unit">%</span></div><span class="stat-foot">সঠিক অক্ষরের হার</span></article>
+        <article class="stat"><span class="stat-label">বাকি সময়</span><div><span class="stat-value" id="timer">30</span><span class="stat-unit">সেকেন্ড</span></div><span class="stat-foot">আপনার সেশনে</span></article>
+        <article class="stat"><span class="stat-label">ভুল</span><div><span class="stat-value" id="errors">0</span><span class="stat-unit">টি</span></div><span class="stat-foot">ভুল টাইপ করা অক্ষর</span></article>
+      </section>
+
+      <footer class="page-footer"><span>আপনার সেরা গতি</span><span><strong id="bestWpm">0</strong> <span id="bestUnit">WPM</span> <span class="footer-divider">/</span> <span id="bestAccuracy">0</span>% নির্ভুলতা</span></footer>
+    </main>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>
